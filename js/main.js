@@ -7,8 +7,6 @@ const detailView = document.getElementById('detail-view');
 const backBtn = document.getElementById('back-btn');
 const detailPhotos = document.getElementById('detail-photos');
 const dots = document.querySelectorAll('#detail-dots .dot');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
 
 function showEl(el) {
   el.classList.remove('hidden');
@@ -53,17 +51,4 @@ backBtn.addEventListener('click', () => {
 detailPhotos.addEventListener('scroll', () => {
   const index = Math.round(detailPhotos.scrollLeft / detailPhotos.clientWidth);
   dots.forEach((d, i) => d.classList.toggle('active', i === index));
-});
-
-// tap a shirt photo to zoom fullscreen
-document.querySelectorAll('.detail-photo').forEach(photo => {
-  photo.addEventListener('click', () => {
-    lightboxImg.src = photo.src;
-    showEl(lightbox);
-  });
-});
-
-// tap anywhere on the zoomed view to close it
-lightbox.addEventListener('click', () => {
-  hideEl(lightbox);
 });
