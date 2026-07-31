@@ -83,7 +83,7 @@ html, body {
 }
 
 /* Detail view */
-#detail-view {
+.detail-view {
   position: fixed;
   inset: 0;
   background: #fff;
@@ -97,14 +97,14 @@ html, body {
   transition: opacity 1s ease;
   z-index: 8;
 }
-#back-btn {
+.back-btn {
   position: absolute;
   top: 1rem;
   left: 1rem;
   font-size: 0.9rem;
   cursor: pointer;
 }
-#detail-photos {
+.detail-photos {
   display: flex;
   overflow-x: auto;
   scroll-snap-type: x mandatory;
@@ -119,7 +119,7 @@ html, body {
   object-fit: contain;
   flex-shrink: 0;
 }
-#detail-dots {
+.detail-dots {
   display: flex;
   gap: 0.5rem;
   margin-top: 0.75rem;
@@ -133,7 +133,7 @@ html, body {
 .dot.active {
   background: #000;
 }
-#detail-description {
+.detail-description {
   margin-top: 1rem;
   text-align: center;
   line-height: 1.6;
