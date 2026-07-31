@@ -61,7 +61,7 @@ html, body {
   transition: opacity 1s ease;
 }
 #site-header img {
-  max-width: 80px;
+  max-width: 120px;
 }
 
 /* Gallery */
@@ -70,7 +70,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding: 120px 0 60px;
+  padding: 150px 0 60px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 1s ease;
@@ -80,7 +80,7 @@ html, body {
   cursor: pointer;
 }
 
-/* Detail view — fits in one screen, no scrolling, shifted up */
+/* Detail view */
 #detail-view {
   position: fixed;
   inset: 0;
@@ -89,7 +89,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 70px 1rem 2rem;
+  padding: 90px 1rem 2rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 1s ease;
@@ -107,16 +107,16 @@ html, body {
   overflow-x: auto;
   scroll-snap-type: x mandatory;
   width: 100%;
-  max-width: 500px;
-  max-height: 78vh;
-  margin-top: 1rem;
+  max-width: 600px;
+  max-height: 82vh;
 }
 .detail-photo {
   scroll-snap-align: center;
-  max-height: 78vh;
+  max-height: 82vh;
   width: 100%;
   object-fit: contain;
   flex-shrink: 0;
+  cursor: pointer;
 }
 #detail-dots {
   display: flex;
@@ -135,6 +135,26 @@ html, body {
 #detail-description {
   margin-top: 1rem;
   text-align: center;
+  line-height: 1.6;
+}
+
+/* Zoom lightbox */
+#lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 30;
+}
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
 }
 
 /* Visible / hidden states (JS always sets exactly one) */
