@@ -1,1 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>brand</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
 
+  <!-- Enter Screen -->
+  <div id="enter-screen">
+    <button id="enter-btn">enter</button>
+  </div>
+
+  <!-- Logo intro (fades in, then out) -->
+  <div id="logo-screen">
+    <img src="assets/images/mainlogo.png" alt="logo">
+  </div>
+
+  <!-- Persistent header logo (appears after intro) -->
+  <header id="site-header">
+    <img src="assets/images/mainlogo.png" alt="logo">
+  </header>
+
+  <!-- Background audio -->
+  <audio id="bg-music" src="assets/music/drunk.mp3" loop></audio>
+
+  <!-- Gallery (single column) -->
+  <div id="gallery">
+    <img class="gallery-item" src="assets/images/jerseyfront.png" alt="jersey">
+  </div>
+
+  <!-- Detail view -->
+  <div id="detail-view">
+    <button id="back-btn">back</button>
+    <div id="detail-photos">
+      <img class="detail-photo" src="assets/images/jerseyfront.png" alt="jersey front">
+      <img class="detail-photo" src="assets/images/jerseyback.png" alt="jersey back">
+    </div>
+    <p id="detail-description">placeholder description for this item goes here</p>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
