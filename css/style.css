@@ -43,6 +43,7 @@ html, body {
   pointer-events: none;
 }
 #logo-screen img {
+  display: block;
   max-width: 300px;
 }
 
@@ -61,7 +62,8 @@ html, body {
   transition: opacity 1s ease;
 }
 #site-header img {
-  max-width: 120px;
+  display: block;
+  max-width: 180px;
 }
 
 /* Gallery */
@@ -70,7 +72,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   gap: 2rem;
-  padding: 150px 0 60px;
+  padding: 190px 0 60px;
   opacity: 0;
   pointer-events: none;
   transition: opacity 1s ease;
@@ -89,7 +91,7 @@ html, body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  padding: 90px 1rem 2rem;
+  padding: 130px 1rem 2rem;
   opacity: 0;
   pointer-events: none;
   transition: opacity 1s ease;
@@ -108,15 +110,14 @@ html, body {
   scroll-snap-type: x mandatory;
   width: 100%;
   max-width: 600px;
-  max-height: 82vh;
+  max-height: 78vh;
 }
 .detail-photo {
   scroll-snap-align: center;
-  max-height: 82vh;
+  max-height: 78vh;
   width: 100%;
   object-fit: contain;
   flex-shrink: 0;
-  cursor: pointer;
 }
 #detail-dots {
   display: flex;
@@ -136,25 +137,6 @@ html, body {
   margin-top: 1rem;
   text-align: center;
   line-height: 1.6;
-}
-
-/* Zoom lightbox */
-#lightbox {
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.85);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.3s ease;
-  z-index: 30;
-}
-#lightbox img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
 }
 
 /* Visible / hidden states (JS always sets exactly one) */
