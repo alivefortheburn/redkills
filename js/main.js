@@ -3,10 +3,6 @@ const logoScreen = document.getElementById('logo-screen');
 const siteHeader = document.getElementById('site-header');
 const gallery = document.getElementById('gallery');
 const bgMusic = document.getElementById('bg-music');
-const detailView = document.getElementById('detail-view');
-const backBtn = document.getElementById('back-btn');
-const detailPhotos = document.getElementById('detail-photos');
-const dots = document.querySelectorAll('#detail-dots .dot');
 
 function showEl(el) {
   el.classList.remove('hidden');
@@ -32,30 +28,41 @@ document.getElementById('enter-btn').addEventListener('click', () => {
   }, 3500);
 });
 
+// gallery item -> open its matching detail view
 document.querySelectorAll('.gallery-item').forEach(item => {
   item.addEventListener('click', () => {
+    const target = document.getElementById(item.dataset.detail);
+    const photos = target.querySelector('.detail-photos');
+    const dots = target.querySelectorAll('.dot');
+
     hideEl(gallery);
-    detailPhotos.scrollLeft = 0;
-    dots.forEach(d => d.classList.remove('active'));
-    dots[0].classList.add('active');
-    showEl(detailView);
+    photos.scrollLeft = 0;
+    dots.forEach((d, i) => d.classList.toggle('active', i === 0));
+    showEl(target);
   });
 });
 
-backBtn.addEventListener('click', () => {
-  hideEl(detailView);
-  showEl(gallery);
+// back button in any detail view -> return to gallery
+document.querySelectorAll('.back-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    hideEl(btn.closest('.detail-view'));
+    showEl(gallery);
+  });
 });
 
-// update dots as user swipes
-detailPhotos.addEventListener('scroll', () => {
-  const index = Math.round(detailPhotos.scrollLeft / detailPhotos.clientWidth);
-  dots.forEach((d, i) => d.classList.toggle('active', i === index));
+// update dots as user swipes, per detail view
+document.querySelectorAll('.detail-view').forEach(view => {
+  const photos = view.querySelector('.detail-photos');
+  const dots = view.querySelectorAll('.dot');
+
+  photos.addEventListener('scroll', () => {
+    const index = Math.round(photos.scrollLeft / photos.clientWidth);
+    dots.forEach((d, i) => d.classList.toggle('active', i === index));
+  });
 });
 
 // stop audio when user leaves/tabs out, resume if they come back
 let wasPlaying = false;
-
 document.addEventListener('visibilitychange', () => {
   if (document.hidden) {
     wasPlaying = !bgMusic.paused;
