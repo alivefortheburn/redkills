@@ -52,3 +52,15 @@ detailPhotos.addEventListener('scroll', () => {
   const index = Math.round(detailPhotos.scrollLeft / detailPhotos.clientWidth);
   dots.forEach((d, i) => d.classList.toggle('active', i === index));
 });
+
+// stop audio when user leaves/tabs out, resume if they come back
+let wasPlaying = false;
+
+document.addEventListener('visibilitychange', () => {
+  if (document.hidden) {
+    wasPlaying = !bgMusic.paused;
+    bgMusic.pause();
+  } else if (wasPlaying) {
+    bgMusic.play();
+  }
+});
