@@ -7,31 +7,26 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-
   <!-- Enter Screen -->
   <div id="enter-screen">
     <span id="enter-btn">enter</span>
   </div>
-
   <!-- Logo intro (fades in, then out) -->
   <div id="logo-screen">
     <img src="assets/images/mainlogo.png" alt="logo">
   </div>
-
   <!-- Persistent header logo -->
   <header id="site-header">
     <img src="assets/images/mainlogo.png" alt="logo">
   </header>
-
   <!-- Background audio -->
   <audio id="bg-music" src="assets/music/drunk.mp3" loop></audio>
-
   <!-- Gallery (single column) -->
   <div id="gallery">
     <img class="gallery-item" src="assets/images/jerseyfront.png" alt="jersey" data-detail="detail-jersey">
     <img class="gallery-item" src="assets/images/longfront.png" alt="long" data-detail="detail-long">
+    <img class="gallery-item" src="assets/images/hoodiefront.png" alt="hoodie" data-detail="detail-hoodie">
   </div>
-
   <!-- Detail view: jersey -->
   <div class="detail-view" id="detail-jersey">
     <span class="back-btn">back</span>
@@ -49,7 +44,6 @@
       240 gsm 100% cotton dtg print
     </p>
   </div>
-
   <!-- Detail view: long -->
   <div class="detail-view" id="detail-long">
     <span class="back-btn">back</span>
@@ -67,7 +61,23 @@
       270 gsm 100% cotton dtg print
     </p>
   </div>
-
+  <!-- Detail view: hoodie -->
+  <div class="detail-view" id="detail-hoodie">
+    <span class="back-btn">back</span>
+    <div class="detail-photos">
+      <img class="detail-photo" src="assets/images/hoodiefront.png" alt="hoodie front">
+      <img class="detail-photo" src="assets/images/hoodieback.png" alt="hoodie back">
+    </div>
+    <div class="detail-dots">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+    </div>
+    <p class="detail-description">
+     sunfaded hoodie<br>
+     stone wash drop shoulders<br>
+     400 gsm 100% cotton dtg print
+    </p>
+  </div>
   <script src="js/main.js"></script>
 </body>
 </html>
